@@ -1,0 +1,96 @@
+<div class ="container home_page">
+	<div class="row">
+		<div class="col-md-12 col-md-offset-5">
+			<h1>Edit Profile</h1>
+
+
+			<%= form_for @user do |f| %>
+
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "First Name" %>
+					<%= f.text_field :first_name %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "Last Name" %>
+					<%= f.text_field :last_name %>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "Date of Birth" %>
+					<%= f.date_select :birthday %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "Address" %>
+					<%= f.text_field :address %>
+				</div>
+			</div>			
+			
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "City" %>
+					<%= f.text_field :city%>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "State" %>
+					<%= f.text_field :state_code%>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "Zip Code" %>
+					<%= f.text_field :zip %>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "Neighborhood" %>
+					<%= f.text_field :neighborhood %>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "Phone" %>
+					<%= f.text_field :phone %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.label "About Me" %>
+					<%= f.text_field :about %>
+				</div>
+			</div>			
+			
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.submit "Update", class: "btn btn-info" %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 offset3">	
+					<% unless @user.errors.count == 0  %>
+					<ul>
+						<% @user.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+						<% end %>
+					</ul>
+					<% end %>
+				</div>
+			</div>
+			<%end%>
+		</div>
+	</div>

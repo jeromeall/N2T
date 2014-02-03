@@ -1,0 +1,61 @@
+<div class ="container home_page">
+	<div class="row">
+		<div class="col-md-12 col-md-offset-5">
+			<h1>Sign up</h1>
+
+
+			<%= form_for @user do |f| %>
+
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.text_field :first_name, placeholder: "First Name" %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.text_field :last_name, placeholder: "Last Name" %>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.text_field :email, placeholder: "email" %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.text_field :username, placeholder: "username" %>
+				</div>
+			</div>			
+			
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.password_field :password, placeholder: "Password" %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 offset3">
+					<%= f.submit "Create", class: "btn btn-info" %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 offset3">	
+					<% unless @user.errors.count == 0  %>
+					<ul>
+						<% @user.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+						<% end %>
+					</ul>
+					<% end %>
+				</div>
+			</div>
+			<%end%>
+		</div>
+	</div>
