@@ -23,7 +23,7 @@
 			<div class="row">
 				<div class="span6 offset3">
 					<%= f.label "Date of Birth" %>
-					<%= f.date_select :birthday %>
+					<%= f.date_select :birthday, options = {start_year: 1950 } %>
 				</div>
 			</div>
 

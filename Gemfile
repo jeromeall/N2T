@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem "pry"
+gem "oauth", "~> 0.4.7"
+# group :development do 
+# 	gem 'better_errors'
+# 	gem 'binding_of_caller'
+# 	gem 'quiet_assets'
+# 	gem 'meta_request'
 
 # gem 'bcrypt-ruby','~> 3.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
