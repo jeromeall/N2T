@@ -1,7 +1,15 @@
-<h1>New 2 Town</h1>
-<h4>What are you looking for?</h4>
-<%= form_for(:spots, url: spots_path, method: "get") do |request| %>
-	<%= request.text_field :term %>
-	<%= request.text_field :zip %>
-	<%= request.submit "Find"%>
-<%end%>
+
+<div class= "container">
+	<div class="row">
+		<div class="col-md-12 col-md-offset-4">
+			<h1>New 2 Town</h1>
+			<h4>What are you looking for?</h4>
+			<%= form_for(:spots, url: spots_path, method: "get") do |request| %>
+				<%= request.select :term, options_for_select(@categories.map {|category| category})%>
+
+				<%= request.text_field :zip, placeholder: "Zip Code" %>
+				<%= request.submit "Find"%>
+			<%end%>
+		</div>
+	</div>
+</div>
