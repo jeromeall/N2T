@@ -1,6 +1,6 @@
 NewToTown::Application.routes.draw do
 
-resources :users, :sessions, :spots, :searches
+resources :users, :sessions, :searches, :spots
 root to: "site#index"
 
 # post "/", to: "searches#new"

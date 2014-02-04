@@ -1,6 +1,6 @@
 <h1>New 2 Town</h1>
 <h4>What are you looking for?</h4>
-<%= form_for(:searches, url: searches_path) do |request| %>
+<%= form_for(:searches, url: searches_path, method: "get") do |request| %>
 	<%= request.text_field :term %>
 	<%= request.text_field :zip %>
 	<%= request.submit "Find"%>
