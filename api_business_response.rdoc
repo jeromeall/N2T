@@ -1,0 +1,53 @@
+=> {"is_claimed"=>true,
+ "rating"=>5.0,
+ "mobile_url"=>"http://m.yelp.com/biz/j-k-fitness-studio-san-francisco",
+ "rating_img_url"=>
+  "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/st
+ "review_count"=>49,
+ "name"=>"J+K Fitness Studio",
+ "snippet_image_url"=>
+  "http://s3-media4.ak.yelpcdn.com/photo/CrsJo1lAKdED9Io3rxzf3g/ms.jpg",
+ "rating_img_url_small"=>
+  "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/st
+ "url"=>"http://www.yelp.com/biz/j-k-fitness-studio-san-francisco",
+ "reviews"=>
+  [{"rating"=>5,
+    "excerpt"=>
+     "I can definitely say that I'm 10x more fit then when I started. My cardio 
+    "time_created"=>1383170790,
+    "rating_image_url"=>
+     "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1
+    "rating_image_small_url"=>
+     "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1
+    "user"=>
+     {"image_url"=>
+       "http://s3-media4.ak.yelpcdn.com/photo/CrsJo1lAKdED9Io3rxzf3g/ms.jpg",
+      "id"=>"2yfUn5LH91ZliYRhKz8tDw",
+      "name"=>"Jeremy C."},
+    "rating_image_large_url"=>
+     "http://s3-media3.ak.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1
+    "id"=>"TV0BHlZuMb0umM19rUcfVg"}],
+ "phone"=>"4156215775",
+ "snippet_text"=>
+  "I can definitely say that I'm 10x more fit then when I started. My cardio and
+ "image_url"=>
+  "http://s3-media4.ak.yelpcdn.com/bphoto/NJ6iRfQe0_IF-X2Gw_maMA/ms.jpg",
+ "categories"=>[["Gyms", "gyms"], ["Trainers", "healthtrainers"]],
+ "display_phone"=>"+1-415-621-5775",
+ "rating_img_url_large"=>
+  "http://s3-media3.ak.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/st
+ "id"=>"j-k-fitness-studio-san-francisco",
+ "is_closed"=>false,
+ "location"=>
+  {"cross_streets"=>"15th St & 16th St",
+   "city"=>"San Francisco",
+   "display_address"=>
+    ["1947 Mission St",
+     "(b/t 15th St & 16th St)",
+     "Mission",
+     "San Francisco, CA 94103"],
+   "neighborhoods"=>["Mission"],
+   "postal_code"=>"94103",
+   "country_code"=>"US",
+   "address"=>["1947 Mission St"],
+   "state_code"=>"CA"}, "deals => {"is_popular"=>true, "what_you_get"=>"You get a voucher redeemable for $45 at move-sf.\nPrint out your voucher, or redeem on your phone with the <a href=\"http://www.yelp.com/yelpmobile\">Yelp app</a>.", "time_start"=>1381172460, "title"=>"$25 for $45", "url"=>"http://www.yelp.com/deals/move-sf-san-francisco", "additional_restrictions"=>"Promotion lasts for 1 year from date of purchase. After that period, your voucher is redeemable for the amount you paid, less any value you may have received. Not valid with other vouchers, certificates, or offers. Voucher can only be used for services, not retail products. Must be 18 or older. Only 1 voucher(s) can be purchased and redeemed per person. By appointment only. Up to 3 can be purchased as gifts for others. Subject to the <a target=\"_blank\" href=\"http://www.yelp.com/tos/general_b2c_us_20120911\">General Terms</a>.", "options"=>[{"original_price"=>4500, "title"=>"$25 for $45", "price"=>2500, "purchase_url"=>"https://www.yelp.com/checkout/deal/-D78Ol1ZmTNYyaTtA8T-6Q", "formatted_original_price"=>"$45", "formatted_price"=>"$25", "is_quantity_limited"=>false}], "important_restrictions"=>"New customers only.", "image_url"=>"http://s3-media1.ak.yelpcdn.com/dphoto/MXx0r92R18R2vQ3fFzr-bQ/m.jpg", "id"=>"cA57tRQ88iHyhEsbIlT5Dg", "currency_code"=>"USD"}"}

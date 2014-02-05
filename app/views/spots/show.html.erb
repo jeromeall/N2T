@@ -1,0 +1,22 @@
+
+<%= @business["name"] %>
+
+<img src="<%= @business["image_url"] %>">
+
+<img src="<%= @business["rating_img_url"] %>">
+
+<% @business["location"]["display_address"].each do |address_line| %>
+	<%= address_line %><br>
+<%end%>
+
+<%= @business["display_phone"] %>
+
+<% @business["deals"].each do |deal| %>
+	<%= deal["title"] %>
+	<%= deal["what_you_get"] %>
+	<%= deal["what_you_get"] %>
+	<%= deal["additional_restrictions"] %>
+	<% deal["options"].each do |purchase| %>
+		<a href="<%= purchase["purchase_url"] %>">Purchase</a>
+	<%end%>
+<%end%>
