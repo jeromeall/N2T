@@ -1,4 +1,4 @@
 class Spot < ActiveRecord::Base
-	has_many :spotsusers
-	has_many :users, through :spotsusers
+	has_many :transitions
+	has_many :users, through: :transitions
 end

@@ -3,7 +3,6 @@
   <aside class="span4">
     <section>
       <h3><%= @user.first_name %>, <%= @user.last_name %></h3>
-      <h3><%= @user.username %></h3>
       <h3><%= @user.password %></h3>
       <h3><%= @user.birthday %></h3>
       <h3><%= @user.address %></h3>
@@ -15,5 +14,38 @@
       <h3><%= @user.about %></h3>
     </section>
   </aside>
+  <table border = "1">
+    <thead>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Image</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Cross Streets</th>
+        <th>City</th>
+        <th>Neighborhoods</th>
+        <th>Zip</th>
+        <th>State</th>
+        <th>Category</th>
+        <th>Remove Spot</th>
+    </thead>
+    <% @spots.each do |spot| %>
+      <tr>
+        <td><%= link_to spot.name, spot_path(spot.id) %></td>
+        <td><img src="<%= spot.rating_img_url %>"></td>
+        <td><img src="<%= spot.image_url %>"></td>
+        <td><%= spot.display_phone %></td>
+        <td><%= spot.display_address %></td>
+        <td><%= spot.cross_streets %></td>
+        <td><%= spot.city %></td>
+        <td><%= spot.neighborhoods %></td>
+        <td><%= spot.postal_code %></td>
+        <td><%= spot.state_code %></td>
+        <td><%= spot.category %></td>
+        
+      </tr>
+    <% end %>
+  </table>
+
 </div>
 <div>

@@ -1,4 +1,4 @@
-class Spotsusers < ActiveRecord::Base
+class Transition < ActiveRecord::Base
   belongs_to :user
   belongs_to :spot
 end

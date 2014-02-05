@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-has_many :spotsusers
-has_many :spots, through: :spotsusers
+has_many :transitions
+has_many :spots, through: :transitions
 
 has_secure_password
 

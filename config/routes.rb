@@ -1,11 +1,16 @@
 NewToTown::Application.routes.draw do
 
+
 resources :users, :sessions, :spots
-get "/:yelp_id", to: "spots#show", as: "business"
+get "/spots/:id", to: "spots#view_user_spot"
+
+
 root to: "site#index"
 
 get '/signup' => 'users#new'
 delete '/signout', to: 'sessions#destroy'
 get'/signin' => 'sessions#new'
+post "/:yelp_id", to: "spots#add_to_user"
+get "/:yelp_id", to: "spots#result", as: "business"
 
 end

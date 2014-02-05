@@ -5,8 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    id = params.require(:id)
+    @user = User.find(id)
+    @spots = @user.spots
   end
+
 
   def new
   	@user = User.new()

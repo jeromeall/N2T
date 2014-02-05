@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205010735) do
+ActiveRecord::Schema.define(version: 20140205192035) do
 
   create_table "spots", force: true do |t|
     t.string   "name"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20140205010735) do
     t.text     "snippet_text"
     t.text     "image_url"
     t.string   "display_phone"
-    t.text     "address"
     t.text     "cross_streets"
     t.string   "city"
     t.string   "neighborhoods"
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140205010735) do
     t.datetime "updated_at"
     t.string   "category"
     t.string   "yelp_id"
+    t.text     "display_address"
   end
 
   create_table "spotsusers", force: true do |t|
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20140205010735) do
 
   add_index "spotsusers", ["spot_id"], name: "index_spotsusers_on_spot_id"
   add_index "spotsusers", ["user_id"], name: "index_spotsusers_on_user_id"
+
+  create_table "transitions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "spot_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "transitions", ["spot_id"], name: "index_transitions_on_spot_id"
+  add_index "transitions", ["user_id"], name: "index_transitions_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"
