@@ -11,12 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203195612) do
+ActiveRecord::Schema.define(version: 20140205010735) do
+
+  create_table "spots", force: true do |t|
+    t.string   "name"
+    t.text     "rating_img_url"
+    t.text     "snippet_text"
+    t.text     "image_url"
+    t.string   "display_phone"
+    t.text     "address"
+    t.text     "cross_streets"
+    t.string   "city"
+    t.string   "neighborhoods"
+    t.integer  "postal_code"
+    t.string   "state_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "category"
+    t.string   "yelp_id"
+  end
+
+  create_table "spotsusers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "spot_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spotsusers", ["spot_id"], name: "index_spotsusers_on_spot_id"
+  add_index "spotsusers", ["user_id"], name: "index_spotsusers_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "username"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"

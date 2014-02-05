@@ -1,7 +1,18 @@
 class User < ActiveRecord::Base
-	validates :first_name,:last_name, presence: true, on: :create
+has_many :spotsusers
+has_many :spots, through: :spotsusers
 
 has_secure_password
+
+	validates :first_name, presence: true, length: { maximum: 50 }
+	validates :last_name, presence: true, length: { maximum: 50 }
+	validates :email, presence: true, uniqueness: true
+	validates_format_of :email,with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+	validates :password, :password_confirmation, presence: true, confirmation: true
+	validates :state_code,  length: { is: 2 }, on: :update
+	validates_format_of :state_code, with: /\A[-a-z]+\z/, on: :update
+
+
 
 
 
