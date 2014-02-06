@@ -13,9 +13,9 @@ class SpotsController < ApplicationController
 		consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
 		access_token = OAuth::AccessToken.new(consumer, token, token_secret)
 
+		@category = params[:spots]["term"]
 
-
-		path = "/v2/search?term=#{params[:spots]["term"]}&location=#{params[:spots]["zip"]}"
+		path = "/v2/search?term=#{@category}&location=#{params[:spots]["zip"]}"
 
 		api_request = access_token.get(path).body
 		@search_results = JSON.parse(api_request)
@@ -24,8 +24,9 @@ class SpotsController < ApplicationController
 	end
 
 	def result
+		@category = params[:category]
 		id = params.require(:yelp_id)
-
+		binding.pry
 		consumer_key = 'ikIQlAiyIkmkYEBmfTgQWg'
 		consumer_secret = 'KvdVjZdwTcfl5a1uVyNEf_5EnyA'
 		token = 'JXXPmvxHacfzt2XZmug7sfQ2czqwa9yD'
@@ -43,8 +44,14 @@ class SpotsController < ApplicationController
 	end
 
 	def add_to_user
-		current_user.spots.create(spot_params)
-		redirect_to current_user
+
+	if current_user.spots.find_by(category: params[:spot]["category"]) != nil
+		current_user.spots.find_by(category: params[:spot]["category"]).delete	
+		binding.pry
+	end
+	current_user.spots.create(spot_params)
+
+	redirect_to current_user
 	end
 
   def show

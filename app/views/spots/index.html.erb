@@ -4,7 +4,7 @@
 
 	<% @search_results["businesses"].each do |spot| %>
 	<div>
-		<%= link_to(spot["name"], business_path(spot["id"]), method: "get") %><br>
+		<%= link_to(spot["name"], business_path(spot["id"],category: @category), method: "get") %><br>
 		<img src= "<%= spot["image_url"] %>"><br>
 		<img src= "<%= spot["rating_img_url"] %>" ><br>
 		<% spot["location"]["display_address"].each do |address_line| %>
