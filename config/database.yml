@@ -4,7 +4,7 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: postgressql
+  adapter: postgresql
   encoding: unicode
   database: new2town_development
   pool: 5
@@ -14,13 +14,13 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: postgressql
+  adapter: postgresql
   encoding: unicode
   database: new2town_test
   pool: 5
 
 production:
-  adapter: postgressql
+  adapter: postgresql
   encoding: unicode
   database: new2town
   pool: 5

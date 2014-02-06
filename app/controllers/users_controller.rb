@@ -27,6 +27,7 @@ class UsersController < ApplicationController
         UserMailer.welcome_email(@user).deliver 
         sign_in @user
         redirect_to @user
+        binding.pry
 
     else
         render'new'
