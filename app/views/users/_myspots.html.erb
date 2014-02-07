@@ -1,0 +1,23 @@
+    <% if @groceries_spot != nil %>
+    <table class = "table my_category">
+      <thead><th>My Groceries</th></thead>
+      <tbody>
+        <tr>
+          <td><img src="<%= @groceries_spot.image_url %>"></td>
+
+          <td><%= link_to @groceries_spot.name, spot_path(@groceries_spot.id) %></br> 
+          
+          <%= @groceries_spot.address %></br>
+          (btwn <%= @groceries_spot.cross_streets %>)</br>
+          <%= @laundromat_spot.city %>, <%= @laundromat_spot.state_code %>, <%= @laundromat_spot.postal_code %></br>
+
+          <%= @groceries_spot.display_phone %></td>
+          <td><img src="<%= @groceries_spot.rating_img_url %>"><br> 
+            <%= @laundromat_spot.neighborhoods %></br></td>
+
+        </tr>
+      </tbody>
+    </table>
+    <%end%>
+
+

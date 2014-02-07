@@ -7,7 +7,14 @@ class UsersController < ApplicationController
   def show
     id = params.require(:id)
     @user = User.find(id)
-    @spots = @user.spots
+    @groceries_spot = @user.spots.find_by(category: "Groceries")
+    @laundromat_spot = @user.spots.find_by(category: "Laundromat")
+    @gym_spot = @user.spots.find_by(category: "Gym")
+    @haircut_spot = @user.spots.find_by(category: "Haircut")
+    @postoffice_spot = @user.spots.find_by(category: "Post+Office")
+    @pharmacy_spot = @user.spots.find_by(category: "Pharmacy")
+    @doctor_spot = @user.spots.find_by(category: "Doctor")
+    @dentist_spot = @user.spots.find_by(category: "Dentist")
   end
 
 
@@ -35,8 +42,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
+      @user.save
 		flash[:success] = "Profile Updated"
 		redirect_to @user
 	else
@@ -46,7 +55,7 @@ class UsersController < ApplicationController
 
   private
   	def user_params
-  		params.require(:user).permit(:first_name,:last_name, :email, :password, :password_confirmation)
+  		params.require(:user).permit(:first_name,:last_name, :email, :password, :password_confirmation, :birthday, :address, :city, :state_code, :zip, :neighborhood, :about)
   	end
 
 end

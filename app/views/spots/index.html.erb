@@ -1,15 +1,28 @@
-<div class = "container">
-	<h3> <%= params[:spots]["term"] %>, near <%= params[:spots]["zip"] %></h3>
 
+<div class ="container results">
+<h3> <%= params[:spots]["term"] %>, near <%= params[:spots]["zip"] %></h3>
 
+<table class= "table table-hover listing">
+	<tbody>
 	<% @search_results["businesses"].each do |spot| %>
-	<div>
-		<%= link_to(spot["name"], business_path(spot["id"],category: @category), method: "get") %><br>
-		<img src= "<%= spot["image_url"] %>"><br>
-		<img src= "<%= spot["rating_img_url"] %>" ><br>
+	<tr>
+		<td><img src= "<%= spot["image_url"] %>"><td>
+		
+		<td><%= link_to(spot["name"], business_path(spot["id"],category: @category), method: "get") %><br>
+		
 		<% spot["location"]["display_address"].each do |address_line| %>
+		
 		<%= address_line %><br>
-		<%end%>
-	</div>
+		
+		<%end%></td>
+
+		<td><img src= "<%= spot["rating_img_url"] %>" ><td>
+	
+	<tr>
+	
 	<%end%>
+	
+	</tbody>
+
+</table>
 </div>

@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205192035) do
+ActiveRecord::Schema.define(version: 20140207000747) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "spots", force: true do |t|
     t.string   "name"
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140205192035) do
     t.datetime "updated_at"
     t.string   "category"
     t.string   "yelp_id"
-    t.text     "display_address"
+    t.text     "address"
   end
 
   create_table "spotsusers", force: true do |t|
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 20140205192035) do
     t.datetime "updated_at"
   end
 
-  add_index "spotsusers", ["spot_id"], name: "index_spotsusers_on_spot_id"
-  add_index "spotsusers", ["user_id"], name: "index_spotsusers_on_user_id"
+  add_index "spotsusers", ["spot_id"], name: "index_spotsusers_on_spot_id", using: :btree
+  add_index "spotsusers", ["user_id"], name: "index_spotsusers_on_user_id", using: :btree
 
   create_table "transitions", force: true do |t|
     t.integer  "user_id"
@@ -48,8 +51,8 @@ ActiveRecord::Schema.define(version: 20140205192035) do
     t.datetime "updated_at"
   end
 
-  add_index "transitions", ["spot_id"], name: "index_transitions_on_spot_id"
-  add_index "transitions", ["user_id"], name: "index_transitions_on_user_id"
+  add_index "transitions", ["spot_id"], name: "index_transitions_on_spot_id", using: :btree
+  add_index "transitions", ["user_id"], name: "index_transitions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -65,10 +68,9 @@ ActiveRecord::Schema.define(version: 20140205192035) do
     t.string   "state_code"
     t.integer  "zip"
     t.string   "neighborhood"
-    t.integer  "phone"
     t.text     "about"
   end
 
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

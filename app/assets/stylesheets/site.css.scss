@@ -1,3 +1,35 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#home_page {
+	text-align: center;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.zip {
+	width: 80px;
+	text-align: center;
+}
+
+#N2T {
+	font-size: 4em;
+}
+
+h4#my_spots {
+	text-align: center;
+}
+
+div.container.results {
+	width: 600px;
+	margin: 0 auto;
+}
+
+h3.profile_name {
+	width: 600px;
+	margin: 0 auto;
+}
+table.table.profile_info {
+	width: 600px;
+	margin: 0 auto;
+}
