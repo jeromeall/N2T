@@ -7,7 +7,7 @@
 				<%= request.select :term, options_for_select(@categories.map {|category| category})%>
 				
 				<%= request.text_field :zip, class: "zip", placeholder: "Zip Code" %>
-				<%= request.submit "Find", class: "find" %>
+				<%= request.submit "Find", class: "find", class: "btn btn-primary" %>
 			<%end%>
 		</div>
 	</div>

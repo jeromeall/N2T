@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207000747) do
+ActiveRecord::Schema.define(version: 20140207024112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140207000747) do
     t.string   "category"
     t.string   "yelp_id"
     t.text     "address"
+    t.text     "note"
   end
 
   create_table "spotsusers", force: true do |t|

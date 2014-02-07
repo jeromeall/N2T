@@ -15,7 +15,9 @@ class SpotsController < ApplicationController
 
 		@category = params[:spots]["term"]
 
-		path = "/v2/search?term=#{@category}&location=#{params[:spots]["zip"]}"
+
+		search_by = params[:search_by] || 0 
+		path = "/v2/search?term=#{@category}&location=#{params[:spots]["zip"]}&sort=#{search_by}"
 
 		api_request = access_token.get(path).body
 		@search_results = JSON.parse(api_request)
@@ -55,7 +57,7 @@ class SpotsController < ApplicationController
 
 	def show
 		id = params[:id]
-		@spot = current_user.spots.find_by(id)
+		@spot = current_user.spots.find(id)
 	end
 
 	def destroy
@@ -64,12 +66,19 @@ class SpotsController < ApplicationController
 		redirect_to current_user
 	end
 
+	def update
+		id = params[:id]
+		@spot = current_user.spots.find(id)
+		@spot.update(spot_params)
+		render "show"
+	end
+
 
 
 
 
 	private
 	def spot_params
-		params.require(:spot).permit(:name, :rating_img_url, :snippet_text, :image_url, :display_phone, :address, :cross_streets, :city, :neighborhoods, :postal_code, :state_code, :yelp_id, :category)
+		params.require(:spot).permit(:name, :rating_img_url, :snippet_text, :image_url, :display_phone, :address, :cross_streets, :city, :neighborhoods, :postal_code, :state_code, :yelp_id, :category, :note)
 	end
 end

@@ -1,5 +1,8 @@
 <div class ="container results">
   <h3 class = "profile_name"><%= @user.first_name %></h3>
+  <% if signed_in? %>
+      <%= link_to "Edit", edit_user_path(@user.id) %>
+    <%end%>
     <table class= "table profile_info">
       <tr>
         <td><label>City:</label></td>
@@ -14,6 +17,7 @@
         <td><%= @user.about %></td>
       </tr>
     </table> 
+
 
       
         <h4 id = "my_spots">My Spots</h4>

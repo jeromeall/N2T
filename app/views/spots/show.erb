@@ -1,33 +1,85 @@
 
-  <table border = "1">
-    <thead>
-        <th>Name</th>
-        <th>Rating</th>
-        <th>Image</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>Cross Streets</th>
-        <th>City</th>
-        <th>Neighborhoods</th>
-        <th>Zip</th>
-        <th>State</th>
-        <th>Category</th>
-        <th>Remove Spot</th>
-    </thead>
-    <tr>
-        <td><%= @spot.name %></td>
-        <td><img src="<%= @spot.rating_img_url %>"></td>
-        <td><img src="<%= @spot.image_url %>"></td>
-        <td><%= @spot.display_phone %></td>
-        <td><%= @spot.display_address %></td>
-        <td><%= @spot.cross_streets %></td>
-        <td><%= @spot.city %></td>
-        <td><%= @spot.neighborhoods %></td>
-        <td><%= @spot.postal_code %></td>
-        <td><%= @spot.state_code %></td>
-        <td><%= @spot.category %></td>
-        <td><%= link_to "Remove", spot_path(@spot.id), method: :delete %></td>
-    </tr>
+<div class= "container spot_profile">
+    <%= @spot.name %>
 
 
-</table>
+    <table class = "table profile">
+        <tr>    
+            <td>
+                <img src="<%= @spot.rating_img_url %>"><br>
+                <img src="<%= @spot.image_url %>"></br>
+            </td>
+
+            <td>
+                <table>
+                    <tr>
+                        <td><label>Category</label></td>
+                        <td><%= @spot.category %></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label>Neighborhood: </label></td>
+                        <td><%= @spot.neighborhoods %></td>
+                    </tr>
+                    <tr>
+                        <td><label>Address: </label></td>   
+                        <td><%= @spot.address %></br>
+                            (btwn <%= @spot.cross_streets %>)</br>
+                            <%= @spot.city %>, <%= @spot.state_code %>, <%= @spot.postal_code %></br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Phone: </label></td>
+                        <td><%= @spot.display_phone %></td>
+                    </tr>
+                    <tr>
+                        <td><label>Snippet:</label></td>
+                        <td><%= @spot.snippet_text %></td>
+                    </tr>
+                    <tr>
+                        <td><label>Personal Note:</label>
+                        <td>            <%= @spot.note %>
+            <% if @spot.note == nil %>
+            <button class="btn btn-primary" data-toggle="modal" data-target="    #myModal">
+                Add Note
+            </button>
+            <%else%>
+            <button class="btn btn-primary" data-toggle="modal" data-target="    #myModal">
+                Edit Note
+            </button>
+            <%end%></td>    
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+        <div class = "note">
+
+            
+        </div>
+            <%= button_to "Remove Spot", spot_path(@spot.id), method: :delete, class: "btn btn-primary" %>        
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Note</h4>
+              </div>
+                <div class="modal-body">
+                <%= form_for @spot, method: :update do |spot| %>
+                <%= spot.text_area :note %>
+                </div>
+
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <%= spot.submit "Save", class: "btn btn-default"%>
+                <%end%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

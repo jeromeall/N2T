@@ -18,7 +18,8 @@
 				<tr>
 					<td><label>Neighborhood: </label></td>
 					<td><%= @business["location"]["neighborhoods"].first %></td>
-				<tr>
+				</tr>
+				
 				<tr>
 					<td><label>Address: </label></td>	
 					<td><% @business["location"]["display_address"].each do |address_line| %>
@@ -32,7 +33,7 @@
 				<tr>
 					<td><label>Snippet:</label></td>
 					<td><%= @business["snippet_text"] %></td>
-			<table>
+			</table>
 			<td>
 		</tr>
 	</table>

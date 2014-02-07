@@ -20,4 +20,152 @@
     </table>
     <%end%>
 
+    <% if @laundromat_spot != nil %>
+    <table class = "table my_category">
+      <thead><th>My Laundromat</th></thead>
+      <tbody>
+        <tr>
+          <td><img src="<%= @laundromat_spot.image_url %>"></td>
 
+          <td><%= link_to @laundromat_spot.name, spot_path(@laundromat_spot.id) %></br> 
+          
+          <%= @laundromat_spot.address %></br>
+          (btwn <%= @laundromat_spot.cross_streets %>)</br>
+          <%= @laundromat_spot.city %>, <%= @laundromat_spot.state_code %>, <%= @laundromat_spot.postal_code %></br>
+
+          <%= @laundromat_spot.display_phone %></td>
+          <td><img src="<%= @laundromat_spot.rating_img_url %>"><br> 
+            <%= @laundromat_spot.neighborhoods %></br></td>
+
+        </tr>
+      </tbody>
+    </table>
+    <%end%>
+
+    <% if @gym_spot != nil %>
+    <table class = "table my_category">
+      <thead><th>My Gym</th></thead>
+      <tbody>
+        <tr>
+          <td><img src="<%= @gym_spot.image_url %>"></td>
+
+          <td><%= link_to @gym_spot.name, spot_path(@gym_spot.id) %></br> 
+          
+          <%= @gym_spot.address %></br>
+          (btwn <%= @gym_spot.cross_streets %>)</br>
+          <%= @gym_spot.city %>, <%= @gym_spot.state_code %>, <%= @gym_spot.postal_code %></br>
+
+          <%= @gym_spot.display_phone %></td>
+          <td><img src="<%= @gym_spot.rating_img_url %>"><br> 
+            <%= @gym_spot.neighborhoods %></br></td>
+
+        </tr>
+      </tbody>
+    </table>
+    <%end%>
+
+    <% if @haircut_spot != nil %>
+    <table class = "table my_category">
+      <thead><th>My Hair Salon</th></thead>
+      <tbody>
+        <tr>
+          <td><img src="<%= @haircut_spot.image_url %>"></td>
+
+          <td><%= link_to @haircut_spot.name, spot_path(@haircut_spot.id) %></br> 
+          
+          <%= @haircut_spot.address %></br>
+          (btwn <%= @haircut_spot.cross_streets %>)</br>
+          <%= @haircut_spot.city %>, <%= @haircut_spot.state_code %>, <%= @haircut_spot.postal_code %></br>
+
+          <%= @haircut_spot.display_phone %></td>
+          <td><img src="<%= @haircut_spot.rating_img_url %>"><br> 
+            <%= @haircut_spot.neighborhoods %></br></td>
+
+        </tr>
+      </tbody>
+    </table>
+    <%end%>
+
+    <% if @postoffice_spot != nil %>
+    <table class = "table my_category">
+      <thead><th>My Post Office</th></thead>
+      <tbody>
+        <tr>
+          <td><img src="<%= @postoffice_spot.image_url %>"></td>
+
+          <td><%= link_to @postoffice_spot.name, spot_path(@postoffice_spot.id) %></br> 
+          
+          <%= @postoffice_spot.address %></br>
+          (btwn <%= @postoffice_spot.cross_streets %>)</br>
+          <%= @postoffice_spot.city %>, <%= @postoffice_spot.state_code %>, <%= @postoffice_spot.postal_code %></br>
+
+          <%= @postoffice_spot.display_phone %></td>
+          <td><img src="<%= @postoffice_spot.rating_img_url %>"><br> 
+            <%= @postoffice_spot.neighborhoods %></br></td>
+        </tr>
+      </tbody>
+    </table>
+    <%end%>
+
+    <% if @pharmacy_spot != nil %>
+    <table class = "table my_category">
+      <thead><th>My Pharmacy</th></thead>
+      <tbody>
+        <tr>
+          <td><img src="<%= @pharmacy_spot.image_url %>"></td>
+
+          <td><%= link_to @pharmacy_spot.name, spot_path(@pharmacy_spot.id) %></br> 
+          
+          <%= @pharmacy_spot.address %></br>
+          (btwn <%= @pharmacy_spot.cross_streets %>)</br>
+          <%= @pharmacy_spot.city %>, <%= @pharmacy_spot.state_code %>, <%= @pharmacy_spot.postal_code %></br>
+
+          <%= @pharmacy_spot.display_phone %></td>
+          <td><img src="<%= @pharmacy_spot.rating_img_url %>"><br> 
+            <%= @pharmacy_spot.neighborhoods %></br></td>
+        </tr>
+      </tbody>
+    </table>
+    <%end%>
+
+    <% if @doctor_spot != nil %>
+    <table class = "table my_category">
+      <thead><th>My Doctor</th></thead>
+      <tbody>
+        <tr>
+          <td><img src="<%= @doctor_spot.image_url %>"></td>
+
+          <td><%= link_to @doctor_spot.name, spot_path(@doctor_spot.id) %></br> 
+          
+          <%= @doctor_spot.address %></br>
+          (btwn <%= @doctor_spot.cross_streets %>)</br>
+          <%= @doctor_spot.city %>, <%= @doctor_spot.state_code %>, <%= @doctor_spot.postal_code %></br>
+
+          <%= @doctor_spot.display_phone %></td>
+          <td><img src="<%= @doctor_spot.rating_img_url %>"><br> 
+            <%= @doctor_spot.neighborhoods %></br></td>
+        </tr>
+      </tbody>
+    </table>
+    <%end%> 
+
+    <% if @dentist_spot != nil %>
+    <table class = "table my_category">
+      <thead><th>My Dentist</th></thead>
+      <tbody>
+        <tr>
+          <td><img src="<%= @dentist_spot.image_url %>"></td>
+
+          <td><%= link_to @dentist_spot.name, spot_path(@dentist_spot.id) %></br> 
+          
+          <%= @dentist_spot.address %></br>
+          (btwn <%= @dentist_spot.cross_streets %>)</br>
+          <%= @dentist_spot.city %>, <%= @dentist_spot.state_code %>, <%= @dentist_spot.postal_code %></br>
+
+          <%= @dentist_spot.display_phone %></td>
+          <td><img src="<%= @dentist_spot.rating_img_url %>"><br> 
+            <%= @dentist_spot.neighborhoods %></br></td>
+        </tr>
+      </tbody>
+    </table>
+    <%end%>        

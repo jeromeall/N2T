@@ -12,5 +12,6 @@ delete '/signout', to: 'sessions#destroy'
 get'/signin' => 'sessions#new'
 post "/:yelp_id", to: "spots#add_to_user"
 get "/:yelp_id", to: "spots#result", as: "business"
+post "/spots/:id", to: "spots#update"
 
 end
