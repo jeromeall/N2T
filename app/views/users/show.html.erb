@@ -1,8 +1,11 @@
 <div class ="container results">
+  <div class = "relative">
   <h3 class = "profile_name"><%= @user.first_name %></h3>
-  <% if signed_in? %>
-      <%= link_to "Edit", edit_user_path(@user.id) %>
+    <% if signed_in? %>
+      <%= link_to "Edit", edit_user_path(@user.id), class: "edit_link" %>
     <%end%>
+  </div>
+  <table>  
     <table class= "table profile_info">
       <tr>
         <td><label>City:</label></td>

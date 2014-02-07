@@ -1,5 +1,5 @@
     <% if @groceries_spot != nil %>
-    <table class = "table my_category">
+    <table class = "table table-hover my_category">
       <thead><th>My Groceries</th></thead>
       <tbody>
         <tr>
@@ -21,7 +21,7 @@
     <%end%>
 
     <% if @laundromat_spot != nil %>
-    <table class = "table my_category">
+    <table class = "table table-hover my_category">
       <thead><th>My Laundromat</th></thead>
       <tbody>
         <tr>
@@ -43,7 +43,7 @@
     <%end%>
 
     <% if @gym_spot != nil %>
-    <table class = "table my_category">
+    <table class = "table table-hover my_category">
       <thead><th>My Gym</th></thead>
       <tbody>
         <tr>
@@ -65,7 +65,7 @@
     <%end%>
 
     <% if @haircut_spot != nil %>
-    <table class = "table my_category">
+    <table class = "table table-hover my_category">
       <thead><th>My Hair Salon</th></thead>
       <tbody>
         <tr>
@@ -87,7 +87,7 @@
     <%end%>
 
     <% if @postoffice_spot != nil %>
-    <table class = "table my_category">
+    <table class = "table table-hover my_category">
       <thead><th>My Post Office</th></thead>
       <tbody>
         <tr>
@@ -108,7 +108,7 @@
     <%end%>
 
     <% if @pharmacy_spot != nil %>
-    <table class = "table my_category">
+    <table class = "table table-hover my_category">
       <thead><th>My Pharmacy</th></thead>
       <tbody>
         <tr>
@@ -129,7 +129,7 @@
     <%end%>
 
     <% if @doctor_spot != nil %>
-    <table class = "table my_category">
+    <table class = "table table-hover my_category">
       <thead><th>My Doctor</th></thead>
       <tbody>
         <tr>
@@ -150,8 +150,8 @@
     <%end%> 
 
     <% if @dentist_spot != nil %>
-    <table class = "table my_category">
-      <thead><th>My Dentist</th></thead>
+    <table class = "table table-hover my_category">
+      <thead><th class= "category_title">My Dentist</th></thead>
       <tbody>
         <tr>
           <td><img src="<%= @dentist_spot.image_url %>"></td>

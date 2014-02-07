@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
  */
+h3.profile_name {
+	font-size: 2.75em;
+}
+
+h4#my_spots {
+	border-bottom: 1.5px solid #cbcbcb;
+	padding: 5px;
+	font-size: 2em;
+}
+.edit_link {
+	float: right;
+}
+
+button.btn.btn-default.	remove_spot {
+	float: right;
+}
