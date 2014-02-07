@@ -11,6 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+body.home {
+	background-image: url("la_cityscape.jpg");
+	background-size: cover;
+}
+
 h3.profile_name {
 	font-size: 2.75em;
 }
@@ -24,6 +30,7 @@ h4#my_spots {
 	float: right;
 }
 
-button.btn.btn-default.	remove_spot {
-	float: right;
+.btn.btn-primary.sign_in {
+	margin-top: 10px;
+	margin-left: 45px;
 }

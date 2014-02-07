@@ -42,7 +42,6 @@ class SpotsController < ApplicationController
 
 		api_request_by_id = access_token.get(path).body
 		@business = JSON.parse(api_request_by_id)
-		binding.pry
 	end
 
 
