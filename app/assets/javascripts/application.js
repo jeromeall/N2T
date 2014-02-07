@@ -19,7 +19,7 @@ $(function(){
 		var searchOptions = "";
 		var search = window.location.href.split("&search_by")[0]
 		$.each(options, function(option, msg){
-			searchOptions += "<a href='"+search	+"&search_by="+option+"'>"+msg+"</a>  ";
+			searchOptions += "<a href='"+search	+"&search_by="+option+"'>"+msg+"</a> | ";
 		});
 		return searchOptions;
 	}

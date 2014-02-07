@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+li .nav-link {
+	color: black;
+}
 
 body.home {
 	background-image: url("la_cityscape.jpg");
@@ -34,3 +37,18 @@ h4#my_spots {
 	margin-top: 10px;
 	margin-left: 45px;
 }
+
+nav.navbar.navbar-default.my_nav {
+	border-radius: 0;
+	background-color: transparent;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 2px solid #cbcbcb;
+}
+
+a.navbar-brand.n2t {
+	color: black;
+}
+
+
