@@ -1,23 +1,23 @@
 <div class ="container results">
   <div class = "relative">
-  <h3 class = "profile_name"><%= @user.name %></h3>
+  <h3 class = "profile_name"><%= current_user.name %></h3>
     <% if signed_in? %>
-      <%= link_to "Edit", edit_user_registration_path(@user.id), class: "edit_link" %>
+      <%= link_to "Edit", edit_user_registration_path(current_user), class: "edit_link" %>
     <%end%>
   </div>
   <table>  
     <table class= "table profile_info">
       <tr>
         <td><label>City:</label></td>
-        <td><%= @user.city %></td>
+        <td><%= current_user.city %></td>
       </tr>
       <tr>    
         <td><label>Neighborhood:</label></td>
-        <td><%= @user.neighborhood %></td>
+        <td><%= current_user.neighborhood %></td>
       </tr>
       <tr>  
         <td><label>About:</label></td>
-        <td><%= @user.about %></td>
+        <td><%= current_user.about %></td>
       </tr>
     </table> 
 

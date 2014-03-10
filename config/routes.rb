@@ -5,8 +5,9 @@ as :user do
   get 'sign-in' => 'devise/sessions#new', :as => :new_user_session
   post 'sign-in' => 'devise/sessions#create', :as => :user_session
   delete 'sign-out' => 'devise/sessions#destroy', :as => :destroy_user_session
+  get 'users/:id' => 'devise/registrations#show', :as => :user
 end
-get "/users/:id", to: "devise/registrations#show", :as => :user
+
 
 root to: "site#index"
 
