@@ -15,8 +15,8 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-            <li><%= link_to "#{current_user.first_name.capitalize}", current_user_path, class: "nav-link"%></li>
-            <li><%= link_to "Sign out", session_path, method: "delete", class: "nav-link" %></li>
+            <li><%= link_to "My Spots", user_path(current_user), class: "nav-link"%></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: "delete", class: "nav-link" %></li>
             <li>
         <% else %>
                 <li><%= link_to "Sign in", new_user_session_path , class: "nav-link" %></li>
