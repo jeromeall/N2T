@@ -1,6 +1,7 @@
 NewToTown::Application.routes.draw do
 
 
+  devise_for :users
 resources :users, :sessions, :spots
 get "/spots/:id", to: "spots#view_user_spot"
 
