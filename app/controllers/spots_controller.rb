@@ -13,7 +13,6 @@ class SpotsController < ApplicationController
 		zip = params[:spots]["zip"]
 		search_by = params[:search_by] || 0 
 		
-		binding.pry
 		# construct client instance 
 		client = Yelp::Client.new
 
@@ -35,22 +34,24 @@ class SpotsController < ApplicationController
 	end
 
 	def result
+		consumer_key = ENV['YELP_CONSUMER_KEY']
+		consumer_secret = ENV['YELP_CONSUMER_SECRET']
+		token = ENV['YELP_TOKEN']
+		token_secret = ENV['YELP_TOKEN_SECRET']
+
 		@category = params[:category]
-		id = params.require(:yelp_id)
-		consumer_key = 'ikIQlAiyIkmkYEBmfTgQWg'
-		consumer_secret = 'KvdVjZdwTcfl5a1uVyNEf_5EnyA'
-		token = 'JXXPmvxHacfzt2XZmug7sfQ2czqwa9yD'
-		token_secret = 'Y-0y4MgCGJWLXTpTOUZwkm08sMY'
+		yelp_id = params.require(:yelp_id)
 
-		api_host = 'api.yelp.com'
+		client = Yelp::Client.new
 
-		consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
-		access_token = OAuth::AccessToken.new(consumer, token, token_secret)
-
-		path = "/v2/business/#{params[:yelp_id]}"
-
-		api_request_by_id = access_token.get(path).body
-		@business = JSON.parse(api_request_by_id)
+		request = Yelp::V2::Business::Request::Id.new(
+			:yelp_business_id => yelp_id	,
+			:consumer_key => consumer_key,
+			:consumer_secret => consumer_secret,
+			:token => token,
+			:token_secret => token_secret
+			)
+		@business = client.search(request)
 	end
 
 
