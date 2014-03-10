@@ -35,16 +35,6 @@ ActiveRecord::Schema.define(version: 20140207024112) do
     t.text     "note"
   end
 
-  create_table "spotsusers", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "spot_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "spotsusers", ["spot_id"], name: "index_spotsusers_on_spot_id", using: :btree
-  add_index "spotsusers", ["user_id"], name: "index_spotsusers_on_user_id", using: :btree
-
   create_table "transitions", force: true do |t|
     t.integer  "user_id"
     t.integer  "spot_id"
@@ -54,24 +44,5 @@ ActiveRecord::Schema.define(version: 20140207024112) do
 
   add_index "transitions", ["spot_id"], name: "index_transitions_on_spot_id", using: :btree
   add_index "transitions", ["user_id"], name: "index_transitions_on_user_id", using: :btree
-
-  create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "password_digest"
-    t.string   "remember_token"
-    t.date     "birthday"
-    t.text     "address"
-    t.string   "city"
-    t.string   "state_code"
-    t.integer  "zip"
-    t.string   "neighborhood"
-    t.text     "about"
-  end
-
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
