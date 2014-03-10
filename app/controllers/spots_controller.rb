@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
 	before_filter :authenticate_user!
-
+	# include Yelp::V2::Search::Request::Location
 
 	def index
 		consumer_key = ENV['YELP_CONSUMER_KEY']
@@ -8,20 +8,29 @@ class SpotsController < ApplicationController
 		token = ENV['YELP_TOKEN']
 		token_secret = ENV['YELP_TOKEN_SECRET']
 
-		api_host = 'api.yelp.com'
-
-		consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
-		access_token = OAuth::AccessToken.new(consumer, token, token_secret)
-
-		@category = params[:spots]["term"]
-
-
+		# search parameters
+		category = params[:spots]["term"]
+		zip = params[:spots]["zip"]
 		search_by = params[:search_by] || 0 
-		path = "/v2/search?term=#{@category}&location=#{params[:spots]["zip"]}&sort=#{search_by}"
+		
+		binding.pry
+		# construct client instance 
+		client = Yelp::Client.new
 
-		api_request = access_token.get(path).body
-		@search_results = JSON.parse(api_request)
-		# binding.pry
+		# perform an address/location-based search for cream puffs nearby
+		request = Yelp::V2::Search::Request::Location.new(
+			:term => category,
+			:zipcode =>	zip,
+			:sort => search_by,
+			:consumer_key => consumer_key,
+			:consumer_secret => consumer_secret,
+			:token => token,
+			:token_secret => token_secret
+			)
+		
+		@search_results = client.search(request)
+
+		binding.pry
 		render "spots/index.html.erb"
 	end
 

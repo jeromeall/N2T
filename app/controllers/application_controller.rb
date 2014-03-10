@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 
   def set_categories
-    @categories = ["Groceries", "Laundromat","Gym","Haircut","Post+Office","Pharmacy","Doctor", "Dentist",]
+    @categories = ["Groceries", "Laundromat","Gym","Haircut","Post Office","Pharmacy","Doctor", "Dentist",]
   end
 
   protected

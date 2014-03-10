@@ -4,7 +4,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.2'
 gem "bcrypt", "~> 3.1.5"
 gem 'devise'
-
+gem 'yelpster'
 
 
 gem 'pg'
