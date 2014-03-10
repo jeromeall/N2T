@@ -3,10 +3,10 @@ class SpotsController < ApplicationController
 
 
 	def index
-		consumer_key = 'ikIQlAiyIkmkYEBmfTgQWg'
-		consumer_secret = 'KvdVjZdwTcfl5a1uVyNEf_5EnyA'
-		token = 'JXXPmvxHacfzt2XZmug7sfQ2czqwa9yD'
-		token_secret = 'Y-0y4MgCGJWLXTpTOUZwkm08sMY'
+		consumer_key = ENV['YELP_CONSUMER_KEY']
+		consumer_secret = ENV['YELP_CONSUMER_SECRET']
+		token = ENV['YELP_TOKEN']
+		token_secret = ENV['YELP_TOKEN_SECRET']
 
 		api_host = 'api.yelp.com'
 
