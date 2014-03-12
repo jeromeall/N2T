@@ -29,7 +29,6 @@ class SpotsController < ApplicationController
 		
 		@search_results = client.search(request)
 
-		binding.pry
 		render "spots/index.html.erb"
 	end
 
