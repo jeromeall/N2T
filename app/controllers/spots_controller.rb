@@ -29,7 +29,7 @@ class SpotsController < ApplicationController
 		
 		@search_results = client.search(request)
 
-		render "spots/index.html.erb"
+		# render "spots/index.html.erb"
 	end
 
 	def result
