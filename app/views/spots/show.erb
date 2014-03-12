@@ -1,65 +1,65 @@
 
 <div class= "container">
-    <h4><%= @spot.name%></h4>
+  <h4><%= @spot.name%></h4>
 
 
-    <table class = "table profile">
-        <tr>    
-            <td>
-                <img src="<%= @spot.rating_img_url %>"><br>
-                <img src="<%= @spot.image_url %>"></br>
+  <table class = "table profile">
+    <tr>    
+      <td>
+        <img src="<%= @spot.rating_img_url %>"><br>
+        <img src="<%= @spot.image_url %>"></br>
+      </td>
+
+      <td>
+        <table>
+          <tr>
+            <td><label>Category</label></td>
+            <td><%= @spot.category %></td>
+          </tr>
+
+
+          <tr>
+            <td><label>Neighborhood</label></td>
+            <td><%= @spot.neighborhoods %></td>
+          </tr>
+          <tr>
+            <td><label>Address</label></td>   
+            <td><%= @spot.address %></br>
+              (btwn <%= @spot.cross_streets %>)</br>
+              <%= @spot.city %>, <%= @spot.state_code %>, <%= @spot.postal_code %></br>
             </td>
+          </tr>
+          <tr>
+            <td><label>Phone</label></td>
+            <td><%= @spot.display_phone %></td>
+          </tr>
+          <tr>
+            <td><label>Snippet</label></td>
+            <td><%= @spot.snippet_text %></td>
+          </tr>
+          <tr>
+            <td><label>Personal Note</label>
+              <td><%= @spot.note %>
+                <% if @spot.note == nil %>
+                <a data-toggle="modal" data-target="    #myModal">
+                  Add Note
+                </a>
+                <%else%>
+                <a data-toggle="modal" data-target="    #myModal">
+                  Edit Note
+                </a>
+                <%end%></td>    
 
-            <td>
-                <table>
-                    <tr>
-                        <td><label>Category</label></td>
-                        <td><%= @spot.category %></td>
-                    </tr>
-
-
-                    <tr>
-                        <td><label>Neighborhood</label></td>
-                        <td><%= @spot.neighborhoods %></td>
-                    </tr>
-                    <tr>
-                        <td><label>Address</label></td>   
-                        <td><%= @spot.address %></br>
-                            (btwn <%= @spot.cross_streets %>)</br>
-                            <%= @spot.city %>, <%= @spot.state_code %>, <%= @spot.postal_code %></br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label>Phone</label></td>
-                        <td><%= @spot.display_phone %></td>
-                    </tr>
-                    <tr>
-                        <td><label>Snippet</label></td>
-                        <td><%= @spot.snippet_text %></td>
-                    </tr>
-                    <tr>
-                        <td><label>Personal Note</label>
-                        <td><%= @spot.note %>
-            <% if @spot.note == nil %>
-            <a data-toggle="modal" data-target="    #myModal">
-                Add Note
-            </a>
-            <%else%>
-            <a data-toggle="modal" data-target="    #myModal">
-                Edit Note
-            </a>
-            <%end%></td>    
-
-                </table>
+              </table>
             </td>
-        </tr>
-    </table>
+          </tr>
+        </table>
 
         <div class = "note">
 
-            
+
         </div>
-            <%= button_to "Remove Spot", spot_path(@spot.id), method: :delete, class: "btn btn-primary" %>        
+        <%= button_to "Remove Spot", spot_path(@spot.id), method: :delete, class: "btn btn-primary" %>        
 
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -68,18 +68,18 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">Note</h4>
               </div>
-                <div class="modal-body">
+              <div class="modal-body">
                 <%= form_for @spot, method: :update do |spot| %>
                 <%= spot.text_area :note, class: "note_area" %>
-                </div>
+              </div>
 
-                <div class="modal-footer">
+              <div class="modal-footer">
                 <button type="button" class="btn btn-default remove_spot" data-dismiss="modal">Close</button>
                 <%= spot.submit "Save", class: "btn btn-default"%>
                 <%end%>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
