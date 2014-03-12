@@ -1,1 +1,0 @@
-spots_controller_spec.rb
