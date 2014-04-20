@@ -20,4 +20,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :neighborhood 
     devise_parameter_sanitizer.for(:sign_up) << :about
   end
+  
 end
